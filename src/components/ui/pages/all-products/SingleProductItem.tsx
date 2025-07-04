@@ -53,7 +53,7 @@ const SingleProductItem = ({ item }) => {
       <p className=" text-sm font-semibold ">$ {price}*</p>
 
       <Link to={`/details/${_id}`}>
-        <button className=" cursor-pointer hover:bg-white hover:text-[#29B170] mt-2 px-5 py-3 text-white bg-[#29B170] text-[12.8px] uppercase">
+        <button className=" cursor-pointer hover:bg-white hover:text-p1 mt-2 px-5 py-3 text-white bg-p1 text-[12.8px] uppercase">
           View Details
         </button>
       </Link>

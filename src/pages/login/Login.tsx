@@ -9,8 +9,8 @@ import { verifyToken } from "../../utils/verifyToken";
 import "./login.scss";
 const Login = () => {
   const [credentials, setCredentials] = useState({
-    email: undefined,
-    password: undefined,
+    email: "",
+    password: "",
   });
 
   // const { loading, error, dispatch } = useContext(AuthContext);
@@ -69,41 +69,64 @@ const Login = () => {
     credentials.password = "12345678";
     if (userType === "admin") {
       setCredentials({ email: "admin@gmail.com", password: "secure" });
-      form.reset(credentials);
     } else if (userType === "user") {
-      setCredentials({ email: "admin@gmail.com", password: "secure" });
-      form.reset(credentials);
+      setCredentials({ email: "johndoe@gmail.com", password: "secure" });
     }
   };
 
   return (
-    <div className="login">
-      <form className="lContainer">
-        <input
-          type="email"
-          placeholder="email"
-          id="email"
-          onChange={handleChange}
-          className="lInput border-b3 rounded"
-        />
-        <input
-          type="password"
-          placeholder="password"
-          id="password"
-          onChange={handleChange}
-          className="lInput border-b3 rounded"
-        />
-        <button onClick={handleClick} className="lButton">
-          Login
-        </button>
+    <div
+      className="login flex flex-col
+     gap-8 h-screen items-center justify-center  "
+    >
+      <div className="w-[400px] p-6 rounded shadow-xl ">
+        <div className=" mb-4">
+          <h1 className="mt-5 text-xl font-bold text-p1 ">Demo Credentials:</h1>
+          <div className="  flex justify-center gap-3 mt-3">
+            <button
+              onClick={() => handleCredential("admin")}
+              className="credentialBtn w-full"
+            >
+              Admin
+            </button>
+            <button
+              onClick={() => handleCredential("user")}
+              className="credentialBtn w-full"
+            >
+              User
+            </button>
+          </div>
+        </div>
 
-        <p className="mt-2 ">
-          Don't have an account?{" "}
-          <Link className="text-[#29b170]" to="/register">
-            Create Account
-          </Link>{" "}
-        </p>
-      </form>
+        <form className="lContainer">
+          <input
+            type="email"
+            placeholder="email"
+            id="email"
+            value={credentials.email}
+            onChange={handleChange}
+            className="lInput border-b3 rounded"
+          />
+          <input
+            type="password"
+            placeholder="password"
+            id="password"
+            value={credentials.password}
+            onChange={handleChange}
+            className="lInput border-b3 rounded"
+          />
+          <button onClick={handleClick} className="lButton bg-p1">
+            Login
+          </button>
+
+          <p className="mt-2 ">
+            Don't have an account?{" "}
+            <Link className="text-p1" to="/register">
+              Create Account
+            </Link>{" "}
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

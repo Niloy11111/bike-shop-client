@@ -32,6 +32,17 @@
   .customWidth {
     @apply w-[80%] mx-auto;
   }
+  .credentialBtn {
+    @apply bg-gray-700 text-white px-8 rounded-full py-2 font-bold cursor-pointer hover:border-gray-700 hover:bg-white hover:text-gray-700  text-sm border transition-all duration-100  border-transparent;
+  }
+
+  .activeNav {
+    @apply text-sm    transition-all duration-200 text-p1  font-Inter   font-semibold;
+  }
+
+  .inActiveNav {
+    @apply text-sm  transition-all duration-200 hover:text-p1   font-Inter rounded  font-semibold;
+  }
 }
 
 /* Thin Scrollbar */

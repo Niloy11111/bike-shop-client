@@ -55,7 +55,7 @@ const AllItems = () => {
   };
 
   return (
-    <div className={`mt-10 mb-20 `}>
+    <div className={`mt-20  customWidth`}>
       <div
         onClick={() => setOpenFilter(!openFilter)}
         className="my-5 cursor-pointer"
@@ -71,7 +71,7 @@ const AllItems = () => {
             openFilter ? "lg:w-[300px] lg:block" : "hidden lg:block"
           } lg:w-[300px]`}
         >
-          <div className="border-2 rounded  border-b1  py-2 px-2 uppercase font-semibold">
+          <div className="border-2 rounded  border-p1  py-2 px-2 uppercase font-semibold">
             Shop by Price
           </div>
 
@@ -174,7 +174,7 @@ const AllItems = () => {
           {isLoading || isFetching || !bikeData?.data ? (
             <div className="loader ml-40 ">Loading...</div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6">
+            <div className="mb-20 grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6">
               {bikeData?.data?.map((item) => (
                 <SingleProductItems
                   item={item}

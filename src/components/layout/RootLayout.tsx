@@ -9,7 +9,7 @@ const RootLayout = () => {
     "/login",
     "/change-password",
     "/register",
-    "/all-products",
+    // "/all-products",
     `/details/${id}`,
     "/about",
   ];

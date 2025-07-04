@@ -25,11 +25,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "   text-sm rounded-full   transition-all duration-200 text-[#ff3811b3]  font-Inter rounded  font-semibold  "
-              : "text-sm rounded-full  transition-all duration-200 hover:text-[#ff3811b3]   font-Inter rounded  font-semibold "
+            isPending ? "pending" : isActive ? "   activeNav  " : "inActiveNav "
           }
         >
           Home
@@ -40,11 +36,7 @@ const Navbar = () => {
         <NavLink
           to="/all-products"
           className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "   text-sm rounded-full   transition-all duration-200 text-[#ff3811b3]  font-Inter rounded  font-semibold  "
-              : "text-sm rounded-full  transition-all duration-200 hover:text-[#ff3811b3]   font-Inter rounded  font-semibold "
+            isPending ? "pending" : isActive ? "   activeNav  " : "inActiveNav "
           }
         >
           All Products
@@ -55,11 +47,7 @@ const Navbar = () => {
         <NavLink
           to="/about"
           className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "   text-sm rounded-full   transition-all duration-200 text-[#ff3811b3]  font-Inter rounded  font-semibold  "
-              : "text-sm rounded-full  transition-all duration-200 hover:text-[#ff3811b3]   font-Inter rounded  font-semibold "
+            isPending ? "pending" : isActive ? "   activeNav  " : "inActiveNav "
           }
         >
           About
@@ -83,7 +71,7 @@ const Navbar = () => {
               <Phone className="w-[16px]" /> <span>+9 (681) 843-4596</span>
             </p>
             <p className=" lg:flex items-center gap-1 hidden ">
-              <Mail className="w-[16px]" /> <span>info@rentmode.com</span>
+              <Mail className="w-[16px]" /> <span>info@bikebari.com</span>
             </p>
           </div>
           <div className="md:flex items-center   hidden ">
@@ -92,19 +80,18 @@ const Navbar = () => {
                */}
               <SearchCheck className="w-[20px]" />{" "}
               <span>
-                Find your ideal rental home quickly and easily with our powerful
-                search tools.
+                Shop your dream bike quickly and easily with our smart filtering
+                tools.
               </span>
             </p>
           </div>
         </div>
       </div>
+
       <div
         className={`${
-          scrollY > 30
-            ? "border-b border-b3 w-full fixed top-0 left-0  z-50  "
-            : ""
-        }  py-4  bg-white  `}
+          scrollY > 30 ? "border w-full fixed top-0 left-0  z-50  " : ""
+        }  py-4  border-b3 bg-white  `}
       >
         <div className="customWidth flex lg:flex-row flex-row-reverse  justify-between  items-center">
           <div className="flex  items-center gap-2">
@@ -132,7 +119,11 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="lg:flex bg-blued-200 items-center hidden lg:block  py-3 px-12  rounded-full border border-[#D9D9D9]">
+          <div
+            className={`${
+              scrollY > 30 ? " border-none  " : "border "
+            } border-[#D9D9D9]  lg:flex bg-blued-200 items-center hidden   py-3 px-12  rounded-full `}
+          >
             <ul className=" lg:flex gap-12">{navLinks}</ul>
           </div>
 
