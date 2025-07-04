@@ -65,6 +65,17 @@ const Login = () => {
     }
   };
 
+  const handleCredential = (userType) => {
+    credentials.password = "12345678";
+    if (userType === "admin") {
+      setCredentials({ email: "admin@gmail.com", password: "secure" });
+      form.reset(credentials);
+    } else if (userType === "user") {
+      setCredentials({ email: "admin@gmail.com", password: "secure" });
+      form.reset(credentials);
+    }
+  };
+
   return (
     <div className="login">
       <form className="lContainer">
@@ -73,14 +84,14 @@ const Login = () => {
           placeholder="email"
           id="email"
           onChange={handleChange}
-          className="lInput"
+          className="lInput border-b3 rounded"
         />
         <input
           type="password"
           placeholder="password"
           id="password"
           onChange={handleChange}
-          className="lInput"
+          className="lInput border-b3 rounded"
         />
         <button onClick={handleClick} className="lButton">
           Login

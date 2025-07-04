@@ -6,10 +6,12 @@
 @theme {
   --font-Lato: "Lato", "sans-serif";
   --font-Inter: "Inter", "sans-serif";
-  --color-p1: #ff3811;
+  /* --color-p1: #ff3811; */
+  --color-p1: #41a541;
   --color-p2: #29b170;
   --color-b1: #363636;
   --color-b2: #e9e9e9;
+  --color-b3: #d9d9d9;
   --color-d1: #737373;
   --color-d2: #333333;
   --color-t1: #464646;
@@ -24,6 +26,12 @@
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1); */
   /* ... */
+}
+
+@layer components {
+  .customWidth {
+    @apply w-[80%] mx-auto;
+  }
 }
 
 /* Thin Scrollbar */

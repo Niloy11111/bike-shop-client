@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const WhyChoose = () => {
   return (
-    <div className="dark:text-[#0B0E01]">
+    <div className="dark:text-[#0B0E01] customWidth">
       <h2 className="text-3xl   text-center lg:text-4xl font-Inter font-extrabold uppercase mb-14">
         Why choose us
       </h2>

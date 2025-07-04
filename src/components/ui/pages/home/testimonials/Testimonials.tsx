@@ -73,7 +73,7 @@ const Testimonials = () => {
             </div>
           </div>
 
-          <div className="bg-[url('https://d3k81ch9hvuctc.cloudfront.net/company/V9KZ9Y/images/a962b2f4-8b2f-4194-b3ed-13de0c234ccc.jpeg')] addFlex   h-[240px] lg:h-full  lg:w-[763px]">
+          <div className="bg-[url('https://dma.canyon.com/image/upload/w_850,h_850,c_fill/f_auto/q_auto/2025_Launch_Product_Grizl_Web_Homepage_Gear_2400x2400_ALL_rja6ky')] addFlex  bg-cover h-[240px] lg:h-full  lg:w-[763px]">
             <div className="w-[49px] h-[49px] addFlex bg-p1 rounded-full">
               <FaPlay className="text-lg" />
             </div>

@@ -6,7 +6,7 @@ const Featured = () => {
   const { data: bikeData, isLoading, isFetching } = useGetAllProductsQuery([]);
 
   return (
-    <div>
+    <div className="customWidth">
       <p className="text-center text-p1 font-bold lg:mt-0 mt-5">
         Popular Products
       </p>
