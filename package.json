@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "commit": "git add . && git commit -m \"added contact page and faq section  \" && git push"
+    "commit": "git add . && git commit -m \" added mega menu \" && git push"
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
