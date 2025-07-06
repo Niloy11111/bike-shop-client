@@ -148,3 +148,37 @@ export const userInputs = [
     placeholder: "USA",
   },
 ];
+
+export const faqs = [
+  {
+    id: "faq1",
+    question: "Why should I use a bike shop e-commerce platform?",
+    answer:
+      "A bike shop e-commerce platform allows you to showcase and sell bikes and accessories online, manage orders efficiently, accept secure payments, and reach a broader customer base while automating your sales process.",
+  },
+  {
+    id: "faq2",
+    question: "Who can use this bike shop platform?",
+    answer:
+      "This platform can be used by bike shop owners, individual sellers, and customers looking to purchase bikes or accessories online. Admins can manage products and orders, while customers can browse, filter, purchase, and review products easily.",
+  },
+  {
+    id: "faq3",
+    question: "What payment methods are supported?",
+    answer:
+      "The platform currently supports secure online payments via Stripe and will expand to include PayPal and mobile wallet options to provide flexibility and convenience for customers.",
+  },
+  {
+    id: "faq4",
+    question: "Can customers track their orders?",
+    answer:
+      "We plan to integrate an order tracking feature allowing customers to view the status of their orders, including processing, shipping, and delivery updates directly from their dashboard.",
+  },
+  {
+    id: "faq5",
+    question:
+      "What makes this platform different from other e-commerce solutions?",
+    answer:
+      "This bike shop platform is specifically optimized for bike and accessory sales with advanced filtering by type, brand, and price range, role-based dashboards, and a clean, responsive design that provides a seamless shopping experience across all devices.",
+  },
+];

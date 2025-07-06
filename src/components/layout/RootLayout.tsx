@@ -11,7 +11,7 @@ const RootLayout = () => {
     "/register",
     // "/all-products",
     `/details/${id}`,
-    "/about",
+    // "/about",
   ];
 
   return (

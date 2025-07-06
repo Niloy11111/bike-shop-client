@@ -17,10 +17,22 @@ const Navbar = () => {
     dispatch(logout());
   };
 
+  const [show, setShow] = useState(false);
+
   // console.log(user);
 
   const navLinks = (
     <>
+      <li
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
+        className=" "
+      >
+        <NavLink to="/" className="inActiveNav ">
+          Featured
+        </NavLink>
+      </li>
+
       <li className="">
         <NavLink
           to="/"
@@ -51,6 +63,16 @@ const Navbar = () => {
           }
         >
           About
+        </NavLink>
+      </li>
+      <li className="">
+        <NavLink
+          to="/contact"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "   activeNav  " : "inActiveNav "
+          }
+        >
+          Contact
         </NavLink>
       </li>
     </>
@@ -103,7 +125,7 @@ const Navbar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-[150px] p-2 shadow "
               >
-                {navLinks}
+                {navLinks}sdf
               </ul>
             </div>
 
@@ -186,6 +208,76 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {show && (
+        <div
+          onMouseEnter={() => setShow(true)}
+          onMouseLeave={() => setShow(false)}
+          className={`${
+            scrollY > 30 ? "top-[70px]" : "top-[115px]"
+          } fixed  left-0    bg-[#ededee] z-80 h-[70vh] w-full border-b-5 border-secondary-600`}
+        >
+          <div className="flex  mt-7  justify-center gap-8">
+            <div>
+              <h1 className="megaMenuTitle">Platform Capabilities</h1>
+              <ul className="megaMenuList text-lg font-bold">
+                <li>Business Operations</li>
+                <li>Leasing</li>
+                <li>Accounting and Payments</li>
+                <li>Marketing</li>
+                <li>Business Performance</li>
+              </ul>
+            </div>
+            <div>
+              <h1 className="megaMenuTitle">Key Features</h1>
+              <ul className="megaMenuList">
+                <li>Property Accounting</li>
+
+                <li>Collect Rent Online</li>
+
+                <li>Maintenance Requests</li>
+
+                <li>1099 e-Filing</li>
+
+                <li>Resident Center</li>
+
+                <li>Tenant Screening</li>
+                <li>Tenant background checks</li>
+                <li>Property Management Website</li>
+
+                <li>Online Leasing</li>
+
+                <li>Buildium Marketplace</li>
+
+                <li>Maintenance Contact Center</li>
+              </ul>
+            </div>
+            <div>
+              <h1 className="megaMenuTitle">Customer Success</h1>
+              <ul className="megaMenuList">
+                <li>Buildium Help Hub</li>
+                <li>Onboarding</li>
+                <li>Buildium Rewards</li>
+                <li>Customer Care</li>
+                <li>Data Security</li>
+                <li>Resident Center Resources</li>
+                <li>Customer Stories</li>
+                <li>All Features</li>
+              </ul>
+            </div>
+            <div>
+              <h1 className="megaMenuTitle">Platform Capabilities</h1>
+              <ul className="megaMenuList">
+                <li>Business Operations</li>
+                <li>Leasing</li>
+                <li>Accounting and Payments</li>
+                <li>Marketing</li>
+                <li>Business Performance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

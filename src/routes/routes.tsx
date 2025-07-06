@@ -11,6 +11,7 @@ import OrderVerification from "../components/ui/pages/verifyOrder/Verifyorder";
 import ChangePassword from "../pages/customer/ChangePassword";
 
 import About from "../components/ui/pages/about/About";
+import Contact from "../components/ui/pages/home/contact/Contact.jsx";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import { routeGenerator } from "../utils/routesGenerator";
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "/details/:id",

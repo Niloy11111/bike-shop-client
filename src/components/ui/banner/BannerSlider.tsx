@@ -29,7 +29,7 @@ const BannerSlider = ({ slides }: BannerSliderProps) => {
       <div
         className="bg-white transition-all duration-300 p-2 rounded-full absolute top-[50%] translate-x-[0%]
         
-        translate-y-[-50%] hover:bg-[#ff3811b3] left-8 cursor-pointer z-10"
+        translate-y-[-50%] hover:bg-p1 left-8 cursor-pointer z-10"
         onClick={goToPrevious}
       >
         {" "}
@@ -39,7 +39,7 @@ const BannerSlider = ({ slides }: BannerSliderProps) => {
         ></img>{" "}
       </div>
       <div
-        className="hover:bg-[#ff3811b3] bg-white transition-all duration-300 p-2 rounded-full absolute top-[50%] translate-x-[0%]
+        className="hover:bg-p1 bg-white transition-all duration-300 p-2 rounded-full absolute top-[50%] translate-x-[0%]
         
         translate-y-[-50%] right-8 cursor-pointer z-10"
         onClick={goToNext}
@@ -54,18 +54,18 @@ const BannerSlider = ({ slides }: BannerSliderProps) => {
           backgroundImage: `url(${slides[currentIndex].url}`,
         }}
         className=" w-full h-full bg-cover
-         bg-no-repeat   bg-[center_30%]
+         bg-no-repeat   bg-[center_30%] mb-6
           "
       ></div>
 
-      <div className="lg:flex justify-center hidden cursor-pointer  gap-2 mt-6  ">
+      <div className="lg:flex customWidth hidden cursor-pointer  gap-2 mt-6  ">
         {slides.map((slide, slideIndex) => (
           <div
-            className="border border-[#7CFAC6]"
+            className=""
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
           >
-            <img className="w-[80px] h-[60px]" src={slide.url}></img>
+            <img className="rounded-lg w-[80px] h-[60px]" src={slide.url}></img>
           </div>
         ))}
       </div>
