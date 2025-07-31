@@ -1,174 +1,405 @@
-# Bike Shop
+# 🚴‍♂️ Bike Shop Client
 
-## Setup Instructions
+A modern, full-featured e-commerce platform for bicycle sales and management, built with React, TypeScript, and Redux Toolkit.
 
-### 1. Installation and Environment Setup
+## 📋 Table of Contents
 
-1. Add the following variables in your `.env` file:
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [API Integration](#api-integration)
+- [State Management](#state-management)
+- [Routing](#routing)
+- [Contributing](#contributing)
+- [License](#license)
 
-   - `PORT`: The port number you want to run the application on.
-   - `DATABASE_URL`: The MongoDB URI.
+## 🎯 Overview
 
-### 2. Install Dependencies
+Bike Shop Client is a comprehensive e-commerce application designed for bicycle retail businesses. The platform provides a complete solution for managing products, orders, customers, and administrative functions with a modern, responsive user interface.
 
-Run the following command to install the required npm dependencies:
+### Key Capabilities
 
-```
-npm install
-```
+- **Customer Portal**: Browse products, place orders, and manage account
+- **Admin Dashboard**: Complete product and order management system
+- **User Authentication**: Secure login/register with role-based access
+- **Responsive Design**: Mobile-first approach with modern UI/UX
+- **Real-time Updates**: Dynamic content with Redux state management
 
-### 3. Run the Project
+## ✨ Features
 
-Start the development server with the following command:
+### ��️ Customer Features
 
-#### run project
+- Product browsing and search
+- Detailed product information and images
+- Shopping cart functionality
+- Secure checkout process
+- Order tracking and history
+- User profile management
+- Password change functionality
 
-```
+### ��‍💼 Admin Features
+
+- **Product Management**
+
+  - Add, edit, and delete products
+  - Inventory tracking
+  - Category management
+  - Stock status monitoring
+
+- **Order Management**
+
+  - View all customer orders
+  - Order status updates
+  - Order processing workflow
+
+- **User Management**
+
+  - Customer account administration
+  - User role management
+  - Account status control
+
+- **Analytics Dashboard**
+  - Sales metrics and charts
+  - Performance analytics
+  - Revenue tracking
+
+### �� Security Features
+
+- JWT-based authentication
+- Role-based access control (Admin/Customer)
+- Protected routes
+- Secure API communication
+- Session persistence
+
+## 🛠️ Tech Stack
+
+### Frontend Framework
+
+- **React 18.3.1** - Modern UI library
+- **TypeScript 5.6.2** - Type-safe development
+- **Vite 6.0.5** - Fast build tool and dev server
+
+### State Management
+
+- **Redux Toolkit 2.5.0** - Predictable state management
+- **Redux Persist 6.0.0** - State persistence
+- **React Redux 9.2.0** - React bindings
+
+### UI/UX Libraries
+
+- **Ant Design 5.23.1** - Enterprise UI components
+- **Material-UI 6.4.5** - Material Design components
+- **Tailwind CSS 4.0.3** - Utility-first CSS framework
+- **DaisyUI 5.0.0** - Component library for Tailwind
+- **Styled Components 6.1.15** - CSS-in-JS styling
+
+### Routing & Navigation
+
+- **React Router DOM 7.1.3** - Client-side routing
+- **Protected Routes** - Role-based access control
+
+### Form Handling & Validation
+
+- **React Hook Form 7.54.2** - Performant forms
+- **Zod 3.24.1** - TypeScript-first schema validation
+- **Hookform Resolvers 3.10.0** - Form validation integration
+
+### HTTP Client & API
+
+- **Axios 1.7.9** - HTTP client for API calls
+- **RTK Query** - Data fetching and caching
+
+### Utilities & Icons
+
+- **Lucide React 0.475.0** - Beautiful icons
+- **React Icons 5.4.0** - Icon library
+- **React Feather 2.0.10** - Feather icons
+- **Moment.js 2.30.1** - Date manipulation
+- **JWT Decode 4.0.0** - JWT token handling
+
+### Development Tools
+
+- **ESLint 9.17.0** - Code linting
+- **TypeScript ESLint 8.18.2** - TypeScript linting
+- **Sass Embedded 1.85.0** - CSS preprocessing
+
+## 📋 Prerequisites
+
+Before running this project, ensure you have the following installed:
+
+- **Node.js** (v18 or higher)
+- **npm** or **yarn** package manager
+- **Git** for version control
+
+## 🚀 Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd bike-shop-client
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Environment Setup**
+   Create a `.env` file in the root directory and add your environment variables:
+
+   ```env
+   VITE_API_BASE_URL=your_api_base_url
+   VITE_APP_NAME=Bike Shop Client
+   ```
+
+4. **Start the development server**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. **Open your browser**
+   Navigate to `http://localhost:5173` to view the application
+
+## 🎮 Usage
+
+### Development Commands
+
+```bash
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# TypeScript build with type checking
+npm run buildtsc
+
+# Preview production build
+npm run preview
+
+# Lint code
+npm run lint
+
+# Quick commit and push
+npm run commit
 ```
 
-## How to Run Locally
+### Available Scripts
 
-#### Live Deployment Link
+- `dev` - Start development server with hot reload
+- `build` - Create optimized production build
+- `buildtsc` - TypeScript build with type checking
+- `preview` - Preview production build locally
+- `lint` - Run ESLint for code quality
+- `commit` - Quick git add, commit, and push
 
-[https://bike-bari-6a.netlify.app/](https://bike-bari-6a.netlify.app/)
+## 📁 Project Structure
 
-### 1. Admin Credentials to access dashboard admin activities
+````
+src/
+├── App.tsx                       # Main application component
+├── main.tsx                      # Application entry point
+├── index.css                     # Global styles
+├── vite-env.d.ts                 # Vite environment types
+├── components/                    # Reusable UI components
+│   ├── form/                     # Form components (PHDatePicker, PHForm, etc.)
+│   ├── layout/                   # Layout components (MainLayout, Sidebar, etc.)
+│   ├── reusable/                 # Shared UI components (button, card, dialog, etc.)
+│   ├── Skeleton/                 # Loading skeleton components
+│   ├── ui/                       # Feature-specific UI components
+│   │   ├── banner/               # Banner and slider components
+│   │   ├── navbar/               # Navigation components
+│   │   └── pages/                # Page-specific components
+│   │       ├── home/             # Homepage components
+│   │       ├── all-products/     # Product listing components
+│   │       ├── about/            # About page components
+│   │       ├── bikeDetails/      # Product detail components
+│   │       ├── checkout/         # Checkout flow components
+│   │       ├── error/            # Error page components
+│   │       └── verifyOrder/      # Order verification components
+│   └── widget/                   # Widget components
+├── pages/                        # Application pages
+│   ├── admin/                    # Admin dashboard pages
+│   │   ├── academicManagement/   # Academic management features
+│   │   ├── orderManagemnt/       # Order management features
+│   │   ├── productManagement/    # Product management features
+│   │   └── userManagement/       # User management features
+│   ├── customer/                 # Customer pages
+│   │   ├── orderManagemnt/       # Customer order management
+│   │   └── ChangePassword.tsx    # Password change functionality
+│   ├── login/                    # Authentication pages
+│   ├── register/                 # Registration pages
+│   ├── overviewDashboard/        # Dashboard overview components
+│   └── dashboardUserProfile/     # User profile dashboard
+├── redux/                        # State management
+│   ├── api/                      # API configuration
+│   │   └── baseApi.ts            # Base API setup
+│   ├── features/                 # Redux slices
+│   │   ├── admin/                # Admin-related state
+│   │   └── auth/                 # Authentication state
+│   ├── store.ts                  # Redux store configuration
+│   └── hooks.ts                  # Redux hooks
+├── routes/                       # Application routing
+│   ├── admin.routes.tsx          # Admin route definitions
+│   ├── customer.routes.tsx       # Customer route definitions
+│   └── routes.tsx                # Main route configuration
+├── types/                        # TypeScript type definitions
+│   ├── global.ts                 # Global type definitions
+│   ├── index.ts                  # Type exports
+│   ├── orderManagement.type.ts   # Order management types
+│   ├── productManagement.type.ts # Product management types
+│   ├── sidebar.types.ts          # Sidebar component types
+│   └── userManagement.type.ts    # User management types
+├── utils/                        # Utility functions
+│   ├── routesGenerator.ts        # Route generation utilities
+│   ├── sidebarItemsGenerator.tsx # Sidebar item generation
+│   └── verifyToken.ts            # Token verification utilities
+├── schemas/                      # Data validation schemas
+│   └── academicManagement.schema.ts
+├── constants/                    # Application constants
+│   ├── global.ts                 # Global constants
+│   └── semester.ts               # Semester-related constants
+├── lib/                          # Library utilities
+│   └── utils.ts                  # Common utility functions
+├── config/                       # Configuration files
+├── hooks/                        # Custom React hooks
+├── assets/                       # Static assets
+│   ├── icons/                    # Icon assets
+│   ├── images/                   # Image assets
+│   └── react.svg                 # React logo
+└── styles/                       # Additional styles
+    └── loading/                  # Loading animation styles
 
-#### 1. Admin Email: admin@gmail.com
 
-#### 2. Admin Password: secure
+## 🔌 API Integration
 
-### 2. For user access create an user
+The application uses RTK Query for efficient API communication:
 
-## 1. User Roles:
+- **Base API Configuration**: `src/redux/api/baseApi.ts`
+- **Feature-specific APIs**:
+  - `src/redux/features/admin/` - Admin management APIs
+  - `src/redux/features/auth/` - Authentication APIs
 
-- **Admin**: Can manage users (deactivate accounts), manage products (CRUD), and manage orders (CRUD).
-- **Customer**: Can register, log in, view and purchase products, manage their profile, and track orders.
+### API Features
+- Automatic caching and invalidation
+- Optimistic updates
+- Error handling
+- Loading states
+- Type-safe API calls
 
-## 2. Authentication:
+## 🗃️ State Management
 
-- **Register**: Users can register with name, email, and password.
-- **Login**: Authenticates user, returns a JWT token.
-- **Logout**: Clears the token from local storage and redirects to the login page.
+### Redux Store Structure
+- **Auth Slice**: User authentication and session management
+- **Base API**: RTK Query for API state management
+- **Persisted State**: Authentication state persists across sessions
 
-## 3. Public Routes:
+### Key State Management Features
+- JWT token management
+- User role-based access control
+- Persistent authentication state
+- Optimistic UI updates
+- Centralized error handling
 
-- **Home Page**:
+## 🛣️ Routing
 
-  - Navbar: Logo, favicon, navigation, login/signup buttons.
-  - Banner: Highlight platform or special offers.
-  - Featured Products: Display 6 products with "View All" button.
-  - Extra Section: Testimonials or blogs.
-  - Footer: Essential links, social media, and contact details.
+The application uses React Router with a hierarchical routing structure:
 
-- **All Products Page**:
+### Public Routes
+- `/` - Homepage
+- `/all-products` - Product catalog
+- `/about` - About page
+- `/contact` - Contact page
+- `/details/:id` - Product details
+- `/login` - Authentication
+- `/register` - User registration
 
-  - Search by brand, bike name, or category.
-  - Filters: Price, model, brand, category, availability.
-  - Dynamic results based on search/filter selections.
-  - Product cards with name, brand, model, price, category.
-  - "View Details" button.
+### Protected Routes
+- `/dashboard` - Main dashboard
+- `/admin/*` - Admin-only routes
+- `/customer/*` - Customer portal routes
 
-- **Product Details Page**:
+### Route Protection
+- Role-based access control
+- Authentication guards
+- Automatic redirects for unauthorized access
 
-  - Display product image and details.
-  - "Buy Now" button redirects to checkout.
+## 🎨 UI/UX Features
 
-- **About Page**:
-  - Details about the shop and its mission.
+### Design System
+- **Ant Design**: Primary component library
+- **Material-UI**: Additional UI components
+- **Tailwind CSS**: Utility-first styling
+- **Custom Theme**: Branded color scheme and typography
 
-## 4. Private Routes:
+### Responsive Design
+- Mobile-first approach
+- Responsive breakpoints
+- Touch-friendly interactions
+- Optimized for all screen sizes
 
-- **Checkout Page**:
+### User Experience
+- Loading states and skeletons
+- Toast notifications (Sonner)
+- Form validation feedback
+- Smooth transitions and animations
 
-  - Place orders with product details, user details, total price, and payment method.
-  - Ensure stock availability.
-  - Payment Integration: SurjoPay.
-  - "Order Now" button to confirm purchase.
+## 🤝 Contributing
 
-- **Dashboard (Role-Based)**:
-  - **Admin Dashboard**:
-    - Manage users (deactivate accounts).
-    - Manage products (CRUD).
-    - Manage orders (CRUD).
-  - **User Dashboard**:
-    - View orders and manage profile settings.
-    - Update password (requires current password).
+We welcome contributions! Please follow these steps:
 
-## 5. API Endpoints:
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+````
 
-baseUrl = [http://localhost:5000/api/v1]
+3. **Make your changes**
+4. **Run tests and linting**
+   ```bash
+   npm run lint
+   ```
+5. **Commit your changes**
+   ```bash
+   git commit -m "feat: add your feature description"
+   ```
+6. **Push to your branch**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+7. **Create a Pull Request**
 
-### **Authentication**
+### Code Style Guidelines
 
-- `POST users/register` → Register a new user.
-- `POST /auth/login` → User login.
+- Follow TypeScript best practices
+- Use ESLint configuration
+- Write meaningful commit messages
+- Add proper documentation
+- Include type definitions
 
-### **User Management**
+## 📄 License
 
-- `PATCH /admin/users/:userId/block` → Admin blocks a user.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### **Product Management**
+## 🆘 Support
 
-- `POST /products/create-bike` → Create a new product.
-- `GET /products/bikes` → Fetch all products (search, sort, filter).
-- `GET /products/:id` → Fetch a single product by ID.
-- `PATCH /products/:id` → Update a product by ID.
-- `DELETE /products/:id` → Delete a product by ID.
+For support and questions:
 
-### **Order Management**
+- Create an issue in the repository
+- Contact the development team
+- Check the documentation
 
-- `POST /orders/create-order` → Create a new order.
-- `GET /orders/allOrders` → Fetch all orders (admin).
-- `GET /orders/:orderId` → Fetch specific orders.
-- `PATCH /orders/:id` → Update an order (e.g., status).
-- `DELETE /orders/:id` → Cancel an order.
+---
 
-### **Payment Integration**
-
-- `POST /api/payments/initiate` → Initiate payment with SurjoPay.
-- `GET /api/payments/status/:orderId` → Check payment status.
-
-## 6. Database:
-
-**Database**: MongoDB
-
-### **Schema Includes:**
-
-- **Users**:
-  - Roles: customer, admin.
-  - Fields: Name, Email, Password, Role.
-- **Products**:
-  - Fields: Name, Brand, Price, Model, Stock, Category.
-- **Orders**:
-  - User reference, product details, total price, status.
-
-## 7. Authentication:
-
-- Implement user registration, login, JWT token generation, and logout.
-- Secure password hashing and user session management.
-
-## 8. Product Management:
-
-- CRUD operations for products (create, read, update, delete).
-
-## 9. Order Management:
-
-- CRUD operations for orders (create, read, update, delete).
-- Ensure stock availability before placing orders.
-
-## 10. Payment Integration:
-
-- Integrate **SurjoPay** for payment processing.
-
-## 11. Error Handling:
-
-- Implement consistent and user-friendly error responses for:
-  - Invalid login attempts.
-  - Out-of-stock products.
-  - Unauthorized actions.
-
-## 12. Performance Optimization:
-
-- Optimize API responses for smooth operation with large data loads.
+**Built with ❤️ using React, TypeScript, and modern web technologies**
