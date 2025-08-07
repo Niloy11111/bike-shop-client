@@ -68,7 +68,7 @@ const BikeDetails = () => {
           </div>
         </div>
 
-        <div className="flex lg:flex-row flex-col gap-6">
+        <div className="flex lg:flex-row flex-col gap-6 mt-8">
           <div className="flex-1">
             <img className="h-[400px] w-full" src={photoURL} alt="" />
 

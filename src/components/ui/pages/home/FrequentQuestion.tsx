@@ -24,7 +24,7 @@ const FrequentQuestion = () => {
           <div
             onClick={() => handleVisibility(item?.id)}
             key={item?.id}
-            className="border-b "
+            className="border-b border-b3 "
           >
             <div className="cursor-pointer flex justify-between ">
               <h1 className="pb-5 mt-4 font-bold text-xl text-primary-800">
