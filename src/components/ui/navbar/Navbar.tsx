@@ -1,6 +1,10 @@
-import { Mail, Phone, SearchCheck } from "lucide-react";
+import { Button } from "@/components/reusable/button";
+import {
+  selectGlobalParams,
+  setGlobalParams,
+} from "@/redux/features/auth/globalSlice";
+import { Mail, Menu, Phone, Search, SearchCheck, User, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { FaBars } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import {
@@ -8,17 +12,22 @@ import {
   selectCurrentUser,
 } from "../../../redux/features/auth/authSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import logoWhite from "/public/assets/logo-white.png";
 
 const Navbar = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
   const user = useAppSelector(selectCurrentUser);
   const [scrollY, setScrollY] = useState(0);
   const [show, setShow] = useState(false);
   const [hideTimeout, setHideTimeout] = useState(null);
+  const globalParams = useAppSelector(selectGlobalParams);
 
   const dispatch = useAppDispatch();
   const handleLogout = () => {
     dispatch(logout());
   };
+
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleMouseEnter = () => {
     if (hideTimeout) {
@@ -36,19 +45,7 @@ const Navbar = () => {
   };
 
   const navLinks = (
-    <>
-      <li className="relative">
-        <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className="cursor-pointer"
-        >
-          <NavLink to="/" className="inActiveNav">
-            Featured
-          </NavLink>
-        </div>
-      </li>
-
+    <ul className="xl:flex gap-4 xl:mt-4  xl:space-y-0 space-y-3 ">
       <li className="">
         <NavLink
           to="/"
@@ -58,6 +55,18 @@ const Navbar = () => {
         >
           Home
         </NavLink>
+      </li>
+
+      <li className="relative xl:block hidden   ">
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="cursor-pointer "
+        >
+          <NavLink to="/" className="pb-6 rounded-b-none inActiveNav ">
+            Featured
+          </NavLink>
+        </div>
       </li>
 
       <li className="">
@@ -91,7 +100,7 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
-    </>
+    </ul>
   );
 
   useEffect(() => {
@@ -109,24 +118,37 @@ const Navbar = () => {
     };
   }, [hideTimeout]);
 
+  const handleResetSearch = () => {
+    setSearchTerm("");
+
+    console.log("searchTerm", searchTerm);
+  };
+
   return (
     <nav>
       <div className="bg-p1">
-        <div className="customWidth text-sm flex justify-between text-white h-[40px]">
-          <div className="md:flex gap-5 items-center hidden">
-            <p className="lg:flex items-center gap-1 hidden">
+        <div
+          className="customWidth text-sm flex justify-between
+         text-white h-[40px]"
+        >
+          <div className="flex gap-5  items-center    ">
+            <p className="font-semibold flex items-center gap-1   ">
               <Phone className="w-[16px]" /> <span>+9 (681) 843-4596</span>
             </p>
-            <p className="lg:flex items-center gap-1 hidden">
+            <p className="font-semibold 3xs:flex items-center gap-1 hidden ">
               <Mail className="w-[16px]" /> <span>info@bikebari.com</span>
             </p>
           </div>
-          <div className="md:flex items-center hidden">
-            <p className="hidden lg:flex gap-1 items-center">
-              <SearchCheck className="w-[20px]" />
-              <span>
-                Shop your dream bike quickly and easily with our smart filtering
-                tools.
+          <div className="md:flex items-center  hidden ">
+            <p className="font-semibold  flex gap-1 items-center">
+              {/* Discover your perfect rental apartment with our advanced search
+               */}
+              <SearchCheck className="w-[20px]" />{" "}
+              <span className="">
+                Shop your dream bike quickly
+                <span className="3xs:hidden xl:inline">
+                  and easily with our smart filtering tools.
+                </span>
               </span>
             </p>
           </div>
@@ -135,41 +157,78 @@ const Navbar = () => {
 
       <div
         className={`${
-          scrollY > 30 ? "border w-full fixed top-0 left-0 z-50" : ""
-        } py-4 border-b3 bg-white`}
+          scrollY > 30 ? "border-b w-full fixed top-0 left-0 z-50" : ""
+        }  border-b3 border-b bg-white `}
       >
-        <div className="customWidth flex lg:flex-row flex-row-reverse justify-between items-center">
+        <div className="customWidth h-[70px] flex  justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="dropdown">
-              <div tabIndex={0} role="button" className="lg:hidden">
-                <FaBars className="text-2xl text-p1"></FaBars>
-              </div>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-[150px] p-2 shadow"
-              >
-                {navLinks}
-              </ul>
-            </div>
-
             <div className="flex items-center gap-2">
-              <img
-                className="w-[50px] lg:w-[50px]"
-                src="https://i.ibb.co.com/fY976K4r/Screenshot-2025-02-24-150936.png"
-                alt="BikeBari Logo"
-              />
-              <h2 className="text-xl hidden lg:block font-extrabold font-Inter">
-                BikeBari
-              </h2>
+              <div className="bg-p1 p-2 rounded-md">
+                <img
+                  className="w-[30px] lg:w-[30px]"
+                  src={logoWhite}
+                  alt="BikeBari Logo"
+                />
+              </div>
+              <div>
+                <h2 className="text-xl text-p1  font-bold font-Inter">
+                  Bike Bari
+                </h2>
+                <p className="text-[12px] -mt-1 text-d1">Showroom</p>
+              </div>
             </div>
           </div>
 
           <div
-            className={`${
-              scrollY > 30 ? "border-none" : "border"
-            } border-[#D9D9D9] lg:flex bg-blued-200 items-center hidden py-3 px-12 rounded-full`}
+            className="border-2 border-white focus-within:border-2
+           focus-within:border-p1 rounded-sm p-[1px] 2xl:w-[400px] xl:w-[300px] 
+           md:w-[380px] sm:w-[300px] sm:block hidden"
           >
-            <ul className="lg:flex gap-12">{navLinks}</ul>
+            <div className="pl-2 rounded-sm flex items-center border border-[#D9D9D9]  ">
+              <input
+                name="searchTerm"
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  // setParams([
+                  //   ...(params?.filter((p) => p.name !== "searchTerm") || []),
+                  //   { name: "searchTerm", value: e.target.value },
+                  // ])
+
+                  dispatch(
+                    setGlobalParams([
+                      ...(globalParams?.filter(
+                        (p) => p.name !== "searchTerm"
+                      ) || []),
+                      { name: "searchTerm", value: e.target.value },
+                    ])
+                  );
+                }}
+                id="field-id"
+                className=" text-sm text-gray-950 w-full h-[37px] outline-none "
+                type="text"
+                placeholder="Search for bikes,brands,model..."
+                tabIndex={0}
+              />
+
+              <Link to={`/all-products`}>
+                <div
+                  onClick={handleResetSearch}
+                  className="bg-p1 px-3 py-1 mr-1 cursor-pointer mx-auto
+               text-white flex items-center justify-center rounded-sm"
+                >
+                  <Search className=" w-[14px] " />
+                </div>
+              </Link>
+            </div>
+          </div>
+          {/* py-3 */}
+          <div
+            className={`${
+              scrollY > 30 ? "border-none" : ""
+            } ] xl:flex bg-blued-200 items-center hidden  px-12 `}
+          >
+            <ul className="">{navLinks}</ul>
           </div>
 
           <div className="">
@@ -187,7 +246,7 @@ const Navbar = () => {
                   <div>
                     <button
                       onClick={handleLogout}
-                      className="text-sm flex items-center gap-1 font-Inter font-semibold text-p1"
+                      className="text-sm cursor-pointer flex items-center gap-1 font-Inter font-semibold text-p1"
                     >
                       Logout{" "}
                       <HiOutlineLogout className="text-xl"></HiOutlineLogout>
@@ -213,20 +272,109 @@ const Navbar = () => {
                 </ul>
               </div>
             ) : (
-              <button className="mt-1">
-                <NavLink
-                  to="/login"
-                  className={({ isActive, isPending }) =>
-                    isPending
-                      ? "pending"
-                      : isActive
-                      ? "text-sm bg-p1 text-white font-Inter rounded-full font-semibold py-3 px-6"
-                      : "text-sm hover:bg-p1/80 bg-p1 text-white font-Inter rounded-full font-semibold py-3 px-6"
-                  }
+              <div className="flex items-center gap-1">
+                <button className="mt-1">
+                  <NavLink
+                    to="/login"
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "text-sm bg-p1 text-white font-Inter rounded-md font-semibold py-2.5 px-6"
+                        : "text-sm hover:bg-p1/80 bg-p1 text-white font-Inter rounded-md font-semibold py-2.5 px-6 flex items-center gap-3"
+                    }
+                  >
+                    <User className="w-[20px]" /> Login
+                  </NavLink>
+                </button>
+                <div className="">
+                  <button
+                    onClick={() => setMobileMenu(!mobileMenu)}
+                    className="2xs:block xl:hidden
+                 hover:bg-[#f8fafc] cursor-pointer p-1.5 rounded-sm "
+                  >
+                    <Menu className="w-8 " />
+                  </button>
+                </div>
+
+                {mobileMenu && (
+                  <div
+                    className="fixed inset-0 bg-[#000] opacity-60 z-40"
+                    onClick={() => setMobileMenu(false)}
+                  />
+                )}
+                <div
+                  className={`xl:hidden  bg-white transition-all duration-300 fixed top-0 right-0 h-full shadow-xl z-50 border-l overflow-hidden w-80 ${
+                    mobileMenu
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-full opacity-0"
+                  }`}
                 >
-                  Log in
-                </NavLink>
-              </button>
+                  <div className="p-4  ">
+                    <button
+                      onClick={() => setMobileMenu(!mobileMenu)}
+                      className="2xs:block xl:hidden hover:bg-[#f8fafc] cursor-pointer p-2 rounded-sm"
+                    >
+                      <X className="w-[25px]" />
+                    </button>
+                    <div className="mt-10 mb-2">
+                      <div
+                        className="border-2 border-white focus-within:border-2
+           focus-within:border-p1 rounded-sm p-[1px] w-full "
+                      >
+                        <div className="pl-2 rounded-sm flex items-center border border-[#D9D9D9]  ">
+                          <input
+                            name="searchTerm"
+                            value={searchTerm}
+                            onChange={(e) => {
+                              setSearchTerm(e.target.value);
+
+                              dispatch(
+                                setGlobalParams([
+                                  ...(globalParams?.filter(
+                                    (p) => p.name !== "searchTerm"
+                                  ) || []),
+                                  { name: "searchTerm", value: e.target.value },
+                                ])
+                              );
+                            }}
+                            id="field-id"
+                            className=" text-sm text-gray-950 w-full h-[37px] outline-none "
+                            type="text"
+                            placeholder="Search for bikes,brands,model..."
+                            tabIndex={0}
+                          />
+
+                          <Link to={`/all-products`}>
+                            <div
+                              onClick={handleResetSearch}
+                              className="bg-p1 px-3 py-1 mr-1 cursor-pointer mx-auto
+               text-white flex items-center justify-center rounded-sm"
+                            >
+                              <Search className=" w-[14px] " />
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`w-full border-b  mt-8 pb-5 list-none `}>
+                      {navLinks}
+                    </div>
+
+                    <div className="mt-8">
+                      <Link to="/login">
+                        <Button
+                          className="w-full cursor-pointer mt-2 h-[45px]
+                     bg-p1 "
+                        >
+                          <User /> Login
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
             )}
           </div>
         </div>
@@ -238,8 +386,8 @@ const Navbar = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           className={`${
-            scrollY > 30 ? "top-[70px]" : "top-[110px]"
-          } fixed left-0 bg-[#ededee] z-40 h-[70vh] w-full border-b-5 border-secondary-600 transition-all duration-300`}
+            scrollY > 30 ? "top-[71px]" : "top-[110px]"
+          } fixed left-0 bg-[#ededee] z-40 h-[70vh] w-full border-b-5 border-p1 transition-all duration-300`}
         >
           <div className="flex mt-7 justify-center gap-8">
             <div>

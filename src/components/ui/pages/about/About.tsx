@@ -1,3 +1,4 @@
+import { Button } from "@/components/reusable/button";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -84,11 +85,14 @@ const About = () => {
           If you have any questions, feel free to get in touch with us:
         </p>
         <ul className="flex  lg:flex-row flex-col py-10 text-center  justify-center items-center gap-5 bg-p1 text-white text-2xl lg:h-[100px] ">
-          <li>
-            Email: <a href="mailto:info@bikebari.com">info@bikebari.com</a>
-          </li>
-          <li>Phone: +123 456 789</li>
-          <li>Address: 123 BikeBari Dublin, Ireland, </li>
+          <Button className="bg-white cursor-pointer text-p1 hover:bg-white px-7 rounded-sm">
+            {" "}
+            Lets Connect
+          </Button>
+          <Button className="bg-white cursor-pointer text-p1 hover:bg-white px-7 rounded-sm">
+            {" "}
+            History
+          </Button>
         </ul>
       </section>
     </section>

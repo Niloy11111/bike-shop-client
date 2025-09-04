@@ -126,7 +126,7 @@ const Checkout = () => {
               onClick={handlePlaceOrder}
               className="hover:bg-white text-white hover:border hover:border-p1 hover:text-p1 cursor-pointer transition-all duration-100 w-[304px] h-[50px] flex justify-center bg-p1 items-center px-[18px] rounded mx-auto mt-5"
             >
-              <p className="font-bold uppercase ">Place Order</p>
+              <p className="font-bold  ">Place Order</p>
             </div>
 
             {/* <Modal open={open} onClose={() => setOpen(false)}>
@@ -148,7 +148,7 @@ const Checkout = () => {
               <Link to="/all-products">
                 <div className="hover:bg-white hover:border hover:border-b2 hover:text-t1 cursor-pointer transition-all duration-100 w-[304px] h-[50px] flex justify-center bg-t1 items-center px-[18px] rounded mx-auto mt-5 text-white">
                   <div>
-                    <p className="font-bold uppercase ">countinue shopping</p>
+                    <p className="font-bold  ">Countinue Shopping</p>
                   </div>
                 </div>
               </Link>

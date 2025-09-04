@@ -8,7 +8,7 @@ const ErrorPage = () => {
           className="w-[500px]"
           src="https://i.ibb.co/gjC7Ttm/error-404-concept-illustration-114360-1811.jpg"
         ></img>
-        <h1 className=" text-4xl uppercase font-extrabold mb-3 text-center">
+        <h1 className=" text-4xl  font-extrabold mb-3 text-center">
           404 - Not Found!
         </h1>
         <NavLink to="/">

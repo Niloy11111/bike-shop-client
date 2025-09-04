@@ -22,13 +22,13 @@ const FeatureadItem = ({ item }) => {
         <img className="rounded-xl w-full h-[220px]" src={photoURL} alt="" />
 
         <div className="flex justify-center  gap-5 my-2">
-          <span className="px-4 py-2 bg-[#e1f3e1] rounded-full text-[12px]">
+          <span className="sm:px-3 sm:py-1.5 px-4 py-2  2sm:px-4 2sm:py-2 bg-[#e1f3e1] rounded-full text-[12px]">
             {brand}
           </span>
-          <span className="bg-[#e1f3e1] px-4 py-2  rounded-full text-[12px]">
+          <span className="bg-[#e1f3e1] sm:px-3 px-4 py-2 sm:py-1.5 2sm:px-4 2sm:py-2  rounded-full text-[12px]">
             {category}
           </span>
-          <span className="bg-[#e1f3e1] px-4 py-2  rounded-full text-[12px]">
+          <span className="bg-[#e1f3e1] sm:px-3 px-4 py-2 sm:py-1.5 2sm:px-4 2sm:py-2 rounded-full text-[12px]">
             {model}
           </span>
         </div>

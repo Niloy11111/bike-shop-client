@@ -11,7 +11,7 @@ const SharedHeaderTitle = ({ title, heading, handleNext, handlePrev }) => {
         <h3
           className={`${
             heading === "Book Your Table" ? "text-white" : "text-t2"
-          } text-[30px] uppercase lg:text-[42px] font-bold  leading-[38px] lg:leading-[62px] `}
+          } text-[30px]  lg:text-[42px] font-bold  leading-[38px] lg:leading-[62px] `}
         >
           {heading}
         </h3>

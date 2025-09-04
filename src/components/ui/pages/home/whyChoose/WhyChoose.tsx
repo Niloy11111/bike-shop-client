@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const WhyChoose = () => {
   return (
     <div className="dark:text-[#0B0E01] customWidth">
-      <h2 className="text-3xl   text-center lg:text-4xl font-Inter font-extrabold uppercase mb-14">
+      <h2 className="text-3xl capitalize  text-center lg:text-4xl font-Inter font-extrabold  mb-14">
         Why choose us
       </h2>
 
-      <div className="grid lg:grid-cols-3 gap-10 ">
+      <div className="grid lg:grid-cols-3  md:grid-cols-2 gap-10 ">
         <div className="bg-[#f2f2f2] p-5 rounded-3xl">
           <div className="bg-white max-w-max mx-auto p-5 rounded-full">
             <Handshake color="#ff3811" size={48} />
@@ -22,7 +22,7 @@ const WhyChoose = () => {
           </p>
           <div className="flex justify-center mt-5">
             <Link to={`/login`}>
-              <button className="border-p1 border bg-white px-4 py-2  rounded hover:shadow-lg hover:translate-x-1 transition-all duration-300 ">
+              <button className="border-b3 border bg-white px-4 py-2  rounded hover:shadow-lg hover:translate-x-1 transition-all duration-300 ">
                 {" "}
                 Get Started
               </button>
@@ -65,7 +65,7 @@ const WhyChoose = () => {
           </p>
           <div className="flex justify-center mt-5">
             <Link to={`/login`}>
-              <button className="border-p1 border bg-white px-4 py-2  rounded hover:shadow-lg hover:translate-x-1 transition-all duration-300 ">
+              <button className="border-b3 border bg-white px-4 py-2  rounded hover:shadow-lg hover:translate-x-1 transition-all duration-300 ">
                 {" "}
                 Get Started
               </button>

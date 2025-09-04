@@ -29,8 +29,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="lg:mt-0 mt-16 z-0 relative overflow-hidden h-[861px] lg:h-[965px]  addFlexItems">
-      <div className="w-full z-30 customWidth">
+    <section className="mt-24 z-0 relative overflow-hidden   addFlexItems">
+      <div className=" z-30 customWidth">
         <div className="mb-10">
           <SharedHeaderTitle
             handleNext={handleNext}
@@ -39,8 +39,8 @@ const Testimonials = () => {
             title="Smooth Rides, Every Turn Matters"
           />
         </div>
-        <div className="lg:h-[555px] flex flex-col-reverse lg:flex-row w-full">
-          <div className="relative lg:flex-1 bg-p1 h-[335px] lg:h-full addFlex ">
+        <div className="lg:h-[555px] h-[900px] flex flex-col-reverse lg:flex-row w-full">
+          <div className="relative flex-1 bg-p1 h-[335px] lg:h-full addFlex ">
             <div className="h-[285px] lg:h-[411px] w-[280px] lg:w-[386px] addFlexBetween flex-col">
               <div>
                 <p className="subTitle ">{review}</p>
@@ -73,13 +73,13 @@ const Testimonials = () => {
             </div>
           </div>
 
-          <div className="bg-[url('https://dma.canyon.com/image/upload/w_850,h_850,c_fill/f_auto/q_auto/2025_Launch_Product_Grizl_Web_Homepage_Gear_2400x2400_ALL_rja6ky')] addFlex  bg-cover h-[240px] lg:h-full  lg:w-[763px]">
+          <div className="bg-[url('https://dma.canyon.com/image/upload/w_850,h_850,c_fill/f_auto/q_auto/2025_Launch_Product_Grizl_Web_Homepage_Gear_2400x2400_ALL_rja6ky')] addFlex  bg-cover flex-1 lg:w-[763px]  bg-center">
             <div className="w-[49px] h-[49px] addFlex bg-p1 rounded-full">
               <FaPlay className="text-lg" />
             </div>
           </div>
         </div>
-        <div className="flex justify-center  lg:hidden mt-5 ">
+        <div className="flex justify-center  lg:hidden  mt-5 ">
           <CarouselButton handleNext={handleNext} handlePrev={handlePrev} />
         </div>
       </div>

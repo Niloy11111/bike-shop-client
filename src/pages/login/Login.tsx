@@ -85,13 +85,13 @@ const Login = () => {
           <div className="  flex justify-center gap-3 mt-3">
             <button
               onClick={() => handleCredential("admin")}
-              className="credentialBtn w-full"
+              className="credentialBtn border-b3 w-full"
             >
               Admin
             </button>
             <button
               onClick={() => handleCredential("user")}
-              className="credentialBtn w-full"
+              className="credentialBtn border-b3 w-full"
             >
               User
             </button>
@@ -105,7 +105,7 @@ const Login = () => {
             id="email"
             value={credentials.email}
             onChange={handleChange}
-            className="lInput border-b3 rounded"
+            className="lInput focus:border-p1  border-b3 border rounded-sm focus:outline-none focus:ring-1 focus:ring-p1"
           />
           <input
             type="password"
@@ -113,7 +113,7 @@ const Login = () => {
             id="password"
             value={credentials.password}
             onChange={handleChange}
-            className="lInput border-b3 rounded"
+            className="lInput focus:border-p1  border-b3 border rounded-sm focus:outline-none focus:ring-1 focus:ring-p1"
           />
           <button onClick={handleClick} className="lButton bg-p1">
             Login

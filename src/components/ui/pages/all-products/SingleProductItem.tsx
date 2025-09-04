@@ -17,18 +17,14 @@ const SingleProductItem = ({ item }) => {
   } = item;
 
   return (
-    <div className="border border-b2 rounded-xl hover:shadow-xl transition-all duration-500 p-4 relative">
+    <div className="border border-b2 rounded-xl hover:shadow-xl transition-all duration-500 p-3 relative">
       {inStock === false ? (
-        <button className="bg-p1 w-[130px] h-[45px] rounded-l-full absolute right-0 text-white">
-          <p className="font-semibold">Stock Out</p>
+        <button className="bg-p1 w-[110px] h-[40px] rounded-l-full absolute right-0 text-white">
+          <p className="font-semibold text-sm">Stock Out</p>
         </button>
       ) : (
         ""
       )}
-
-      <p className="uppercase text-[#363636] text-[11px]">
-        2025 // {brand} // {model}{" "}
-      </p>
 
       <img className="rounded-xl w-full h-[220px]" src={photoURL} alt="" />
 
@@ -44,19 +40,27 @@ const SingleProductItem = ({ item }) => {
         </span>
       </div> */}
 
-      <div className=" mt-3 flex items-center border-t-4 border-[#363636] justify-between">
-        <h1 className="text-[#363636]  text-[18px] font-bold ">{name}</h1>
-        <h1 className="text-sm w-[70px] flex justify-center mt-3  text-[#29B170] border rounded-lg p-0.5">
+      <div className="border-t  mt-3 flex items-center  justify-between">
+        <h1 className=" font-bold ">{name}</h1>
+        <h1
+          className="text-[12px]  flex justify-center mt-3  border rounded-full
+        font-semibold px-3 py-0.5"
+        >
           {category}
         </h1>
       </div>
-      <p className=" text-sm font-semibold ">$ {price}*</p>
+      <p className=" text-lg font-semibold ">$ {price}*</p>
+      <div className="flex items-center justify-between">
+        <p className=" text-d2 font-semibold text-sm">
+          {brand}, {model}{" "}
+        </p>
 
-      <Link to={`/details/${_id}`}>
-        <button className=" cursor-pointer hover:bg-white hover:text-p1 mt-2 px-5 py-3 text-white bg-p1 text-[12.8px] uppercase">
-          View Details
-        </button>
-      </Link>
+        <Link to={`/details/${_id}`}>
+          <button className=" cursor-pointer   mt-2 px-5 py-2.5 text-white bg-p1 rounded-sm hover:bg-p1/90     text-sm">
+            View Details
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

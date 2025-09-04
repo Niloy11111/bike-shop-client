@@ -12,13 +12,23 @@ import {
 import storage from "redux-persist/lib/storage";
 import { baseApi } from "./api/baseApi";
 import authReducer from "./features/auth/authSlice";
+import globalReducer from "./features/auth/globalSlice";
 
 const persistConfig = {
   key: "auth",
   storage,
 };
+const globalPersistConfig = {
+  key: "global",
+  storage,
+};
 
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+
+const persistedGlobalReducer = persistReducer(
+  globalPersistConfig,
+  globalReducer
+);
 
 // redux setup video
 // after intial setup in part 1 last video - 26:10
@@ -27,6 +37,7 @@ export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
     auth: persistedAuthReducer,
+    global: globalReducer,
   },
   middleware: (getDefaultMiddlewares) =>
     getDefaultMiddlewares({

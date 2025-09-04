@@ -64,25 +64,84 @@ export const weekDaysOptions = weekdays.map((item) => ({
 export const slides = [
   {
     url: "https://images2.giant-bicycles.com/b_white%2Cc_crop%2Ch_600%2Cq_70%2Cw_1920/amk4alkpzskv9xqeiov6/giant_ebike_banner_navi21.jpg",
-    title: "car-1",
+    pinPoint: "Best Sellers",
+    title: "Professional cycling bikes and accessories",
+    subtitle: "Ride All Year Round",
+    description:
+      "Experience the perfect blend of performance and comfort with our top-rated cycling collection. From professional racing bikes to essential accessories for every rider.",
+    filterBtn: "Mountain",
+    primaryCardImage: "https://example.com/mountain-bike-pro.jpg",
+    primaryCardTitle: "Elite Mountain Series",
+    primaryCardDescription: "Professional mountain bikes with suspension",
+    secondaryCardImage: "https://example.com/bike-accessories.jpg",
+    secondaryCardTitle: "Premium Accessories",
+    secondaryCardDescription:
+      "High-quality helmets, lights, and protective gear",
   },
   {
     url: "https://www.etonline.com/sites/default/files/styles/default/public/images/2024-06/vivi.jpg",
-    title: "car-2",
+    pinPoint: "New Arrivals",
+    title: "Premium electric bikes for urban adventures",
+    subtitle: "Ride Smart Every Day",
+    description:
+      "Discover cutting-edge electric bikes designed for modern city life. Advanced battery technology and smart features make every urban journey effortless and enjoyable.",
+    filterBtn: "Road",
+    primaryCardImage: "https://example.com/urban-ebike.jpg",
+    primaryCardTitle: "Smart Urban E-Bike",
+    primaryCardDescription: "Electric bikes with GPS tracking and mobile app",
+    secondaryCardImage:
+      "https://images.unsplash.com/photo-1502744688674-c619d1586c9e?w=400",
+    secondaryCardTitle: "Urban Commuter Kit",
+    secondaryCardDescription:
+      "Essential gear including bags, locks, and safety",
   },
   {
     url: "https://www.wheelsnwaves.com/wp-content/uploads/banner-e-bike.jpg",
-    title: "car-3",
+    pinPoint: "Limited Edition",
+    title: "Mountain bikes built for extreme terrain",
+    subtitle: "Conquer Every Trail",
+    description:
+      "Unleash your adventure spirit with our rugged mountain bikes. Built to handle the toughest trails and steepest climbs with unmatched durability and precision control.",
+    filterBtn: "Folding",
+    primaryCardImage: "https://example.com/extreme-mountain.jpg",
+    primaryCardTitle: "Extreme Trail Master",
+    primaryCardDescription: "Heavy-duty bikes engineered for terrains",
+    secondaryCardImage: "https://example.com/trail-maintenance.jpg",
+    secondaryCardTitle: "Trail Maintenance Kit",
+    secondaryCardDescription:
+      "Complete maintenance tools and spare parts trails",
   },
-
   {
     url: "https://jettyroadcycles.com.au/cdn/shop/files/Black_White_and_Yellow_Modern_Special_Big_Sale_Banner_1280x.jpg?v=1731561182",
-    title: "car-4",
+    pinPoint: "Special Offer",
+    title: "High-performance racing bikes and gear",
+    subtitle: "Speed Beyond Limits",
+    description:
+      "Push your limits with our championship-grade racing bikes and professional gear. Engineered for speed, aerodynamics, and peak performance on every track.",
+    filterBtn: "Electric",
+    primaryCardImage: "https://example.com/racing-bike-pro.jpg",
+    primaryCardTitle: "Championship Racing Bike",
+    primaryCardDescription: "Carbon fiber bikes used by professionals",
+    secondaryCardImage: "https://example.com/racing-gear.jpg",
+    secondaryCardTitle: "Pro Racing Gear",
+    secondaryCardDescription: "Performance clothing and competitive equipment",
   },
-
   {
     url: "https://www.shutterstock.com/image-photo/e-bike-austria-rental-ebike-600nw-2039878520.jpg",
-    title: "car-5",
+    pinPoint: "Customer Choice",
+    title: "Eco-friendly commuter bikes for daily rides",
+    subtitle: "Green Journey Starts Here",
+    description:
+      "Transform your daily commute with our sustainable and stylish bikes. Reduce your carbon footprint while enjoying smooth, reliable transportation for work and leisure.",
+    filterBtn: "Electric",
+    primaryCardImage:
+      "https://images.unsplash.com/photo-1502744688674-c619d1586c9e?w=400",
+    primaryCardTitle: "Eco Commuter Series",
+    primaryCardDescription: "Sustainable bikes made from recycled materials",
+    secondaryCardImage:
+      "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=400",
+    secondaryCardTitle: "Green Accessories",
+    secondaryCardDescription: "Environmentally conscious bike accessories",
   },
 ];
 

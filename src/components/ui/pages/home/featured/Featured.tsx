@@ -6,7 +6,7 @@ const Featured = () => {
   const { data: bikeData, isLoading, isFetching } = useGetAllProductsQuery([]);
 
   return (
-    <div className="customWidth">
+    <div className="customWidth ">
       <p className="text-center text-p1 font-bold lg:mt-0 mt-5">
         Popular Products
       </p>
@@ -20,8 +20,8 @@ const Featured = () => {
         even slightly believable.{" "}
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6">
-        {bikeData?.data?.slice(0, 6).map((item) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
+        {bikeData?.data?.slice(0, 8).map((item) => (
           <FeatureadItem item={item} key={item._id}></FeatureadItem>
         ))}
       </div>
