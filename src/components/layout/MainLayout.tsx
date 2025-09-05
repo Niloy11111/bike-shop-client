@@ -23,7 +23,7 @@ const MainLayout = () => {
         <Layout>
           <Header style={{ backgroundColor: "#1a1a1a", color: "black" }}>
             <Link to="/">
-              <Button className="ant-button hoverButton">Go Home</Button>
+              <Button className="ml-[10px] hoverButton">Go Home</Button>
             </Link>
           </Header>
           <Content

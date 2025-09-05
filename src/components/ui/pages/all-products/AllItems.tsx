@@ -20,6 +20,7 @@ import {
   SelectValue,
 } from "../../select";
 import SingleProductItems from "./SingleProductItem";
+import SingleProductItemSkeleton from "./SingleProductItemSkeleton";
 
 const AllItems = () => {
   const [openFilter, setOpenFilter] = useState(false);
@@ -69,7 +70,7 @@ const AllItems = () => {
     label: item,
   }));
 
-  const handleChange = (value: string) => {
+  const handleFilterByBrand = (value: string) => {
     console.log(`selected ${value}`);
     // setParams([
     //   ...(params?.filter((p) => p.name !== "searchTerm") || []),
@@ -91,7 +92,7 @@ const AllItems = () => {
     dispatch(
       setGlobalParams([
         ...(params?.filter((p) => p.name !== value) || []),
-        { name: "searchTerm", value: value },
+        { name: "model", value: value },
       ])
     );
   };
@@ -109,7 +110,7 @@ const AllItems = () => {
     return currentCategory === categoryValue;
   };
   return (
-    <div className={`mt-10  customWidth`}>
+    <section className={`mt-10  customWidth `}>
       <div
         onClick={() => setOpenFilter(!openFilter)}
         className="my-5 cursor-pointer"
@@ -118,7 +119,7 @@ const AllItems = () => {
           SHOW FILTER {openFilter ? <Minus /> : <Plus />}
         </h1>
       </div>
-      <h1 className="text-3xl smHidden font-bold "> Explore More Products</h1>
+      <h1 className="text-3xl  font-bold "> Explore Products</h1>
       <p className="text-d1 mt-5 mb-8">
         Discover premium bikes and accessories with ease. Find top brands, best
         deals, and ride in style.
@@ -127,9 +128,9 @@ const AllItems = () => {
         <div
           className={`${
             openFilter
-              ? "lg:w-[300px] lg:block"
-              : "hidden lg:w-[400px] lg:block"
-          } lg:w-[300px]`}
+              ? "lg:w-[350px] w-full lg:block"
+              : "hidden w-[350px]  lg:block"
+          } `}
         >
           {/* Search input */}
           <div>
@@ -209,6 +210,81 @@ const AllItems = () => {
             </div>
           </div>
 
+          {/* Model */}
+          <div className="mt-5 border-2 border-white focus-within:border-p1 focus-within:border-2 rounded-lg p-[1px] ">
+            <Select defaultValue="" onValueChange={handleFilterByModel}>
+              <SelectTrigger className="rounded-md w-full  focus-visible:ring-0 focus-visible:ring-offset-0  focus:border-b3 focus:outline-none">
+                <SelectValue placeholder="Filter By Models" />
+              </SelectTrigger>
+              <SelectContent className="bg-white">
+                <SelectItem
+                  className="font-Inter text-sm   !important"
+                  value="any"
+                >
+                  Select Any Model
+                </SelectItem>
+                {modelOptions?.map((option) => (
+                  <SelectItem
+                    key={option.value}
+                    value={option.value}
+                    className="font-Inter text-sm  !important"
+                  >
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          {/* Brands */}
+          <div className="mt-2 border-2 border-white focus-within:border-p1 focus-within:border-2 rounded-lg p-[1px]">
+            <Select defaultValue="" onValueChange={handleFilterByBrand}>
+              <SelectTrigger className="rounded-md w-full  focus-visible:ring-0 focus-visible:ring-offset-0  focus:border-b3 focus:outline-none">
+                <SelectValue placeholder="Filter By Brands" />
+              </SelectTrigger>
+              <SelectContent className="bg-white">
+                <SelectItem
+                  className="font-Inter text-sm  !important"
+                  value="any"
+                >
+                  Select Any Brand
+                </SelectItem>
+                {brandOptions?.map((option) => (
+                  <SelectItem
+                    key={option.value}
+                    value={option.value}
+                    className="font-Inter text-sm  !important"
+                  >
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Model */}
+          {/* <div className="rounded text-sm mt-5 border-2 border-b1  py-2 px-2 uppercase font-semibold mb-2">
+            Model
+          </div>
+
+          <Select
+            defaultValue="Filter By Models"
+            style={{ width: "100%" }}
+            size="large"
+            onChange={handleFilterByModel}
+            options={modelOptions}
+          /> */}
+          {/* <div className="rounded text-sm mt-5 border-2 border-b1  py-2 px-2 uppercase font-semibold mb-2">
+            Brand
+          </div>
+
+          <Select
+            defaultValue="Filter By Brands"
+            style={{ width: "100%" }}
+            size="large"
+            onChange={handleChange}
+            options={brandOptions}
+          /> */}
+
           {/* Price range */}
           <div className="mt-5 border  border-b3 p-4 rounded-lg">
             <div
@@ -257,88 +333,17 @@ const AllItems = () => {
               ))}
             </div>
           </div>
-
-          {/* Model */}
-          <div className="mt-5 border-2 border-white focus-within:border-p1 focus-within:border-2 rounded-lg p-[1px] ">
-            <Select defaultValue="" onValueChange={handleFilterByModel}>
-              <SelectTrigger className="rounded-md w-full  focus-visible:ring-0 focus-visible:ring-offset-0  focus:border-b3 focus:outline-none">
-                <SelectValue placeholder="Filter By Models" />
-              </SelectTrigger>
-              <SelectContent className="bg-white">
-                <SelectItem
-                  className="font-Inter text-sm   !important"
-                  value="any"
-                >
-                  Select Any Model
-                </SelectItem>
-                {modelOptions?.map((option) => (
-                  <SelectItem
-                    key={option.value}
-                    value={option.value}
-                    className="font-Inter text-sm  !important"
-                  >
-                    {option.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          {/* Brands */}
-          <div className="mt-2 border-2 border-white focus-within:border-p1 focus-within:border-2 rounded-lg p-[1px]">
-            <Select defaultValue="" onValueChange={handleFilterByModel}>
-              <SelectTrigger className="rounded-md w-full  focus-visible:ring-0 focus-visible:ring-offset-0  focus:border-b3 focus:outline-none">
-                <SelectValue placeholder="Filter By Brands" />
-              </SelectTrigger>
-              <SelectContent className="bg-white">
-                <SelectItem
-                  className="font-Inter text-sm  !important"
-                  value="any"
-                >
-                  Select Any Brand
-                </SelectItem>
-                {brandOptions?.map((option) => (
-                  <SelectItem
-                    key={option.value}
-                    value={option.value}
-                    className="font-Inter text-sm  !important"
-                  >
-                    {option.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Model */}
-          {/* <div className="rounded text-sm mt-5 border-2 border-b1  py-2 px-2 uppercase font-semibold mb-2">
-            Model
-          </div>
-
-          <Select
-            defaultValue="Filter By Models"
-            style={{ width: "100%" }}
-            size="large"
-            onChange={handleFilterByModel}
-            options={modelOptions}
-          /> */}
-          {/* <div className="rounded text-sm mt-5 border-2 border-b1  py-2 px-2 uppercase font-semibold mb-2">
-            Brand
-          </div>
-
-          <Select
-            defaultValue="Filter By Brands"
-            style={{ width: "100%" }}
-            size="large"
-            onChange={handleChange}
-            options={brandOptions}
-          /> */}
         </div>
 
-        <div>
+        <div className="2xl:w-[1175px] xl:w-[890px] 2lg:w-[690px] lg:w-[680px]">
           {isLoading || isFetching || !bikeData?.data ? (
-            <div className="loader ml-40 ">Loading...</div>
+            <div className=" grid grid-cols-1 xl:grid-cols-2  2xl:grid-cols-3 gap-6">
+              {Array.from({ length: 8 }).map((item, index) => (
+                <SingleProductItemSkeleton key={index} />
+              ))}
+            </div>
           ) : (
-            <div className="mb-20 grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6">
+            <div className="mb-20 grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 2xl:gap-x-6 xl:gap-x-32 2xl:grid-cols-3 gap-6">
               {bikeData?.data?.map((item) => (
                 <SingleProductItems
                   item={item}
@@ -349,7 +354,7 @@ const AllItems = () => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

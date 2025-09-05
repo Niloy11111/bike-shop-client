@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "commit": "git add . && git commit -m \" made banner more uniqu and re-organize all products page \" && git push"
+    "commit": "git add . && git commit -m \" responsive design task \" && git push"
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",

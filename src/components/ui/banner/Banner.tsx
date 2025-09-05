@@ -126,7 +126,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="flex customWidth    items-center justify-between">
+        <div className="flex sm:flex-row sm:gap-0 gap-6 items-start flex-col customWidth    sm:items-center justify-between">
           <div className="lg:flex  hidden cursor-pointer  gap-2  ">
             {slides.map((slide, slideIndex) => (
               <div
@@ -147,26 +147,26 @@ const Banner = () => {
               <img className="w-[30px] " src={gear} alt="sdf" />
             </div>
             <div>
-              <h1 className="font-semibold ">
+              <h1 className="font-semibold text-sm ">
                 {" "}
                 {slides[currentIndex].primaryCardTitle}
               </h1>
-              <p className="w-[350px] text-sm font-medium text-d1">
+              <p className="xl:w-[350px] text-sm font-medium text-d1">
                 {" "}
                 {slides[currentIndex].primaryCardDescription}
               </p>
             </div>
           </div>
-          <div className=" flex items-start gap-3">
-            <div className="bg-[#dcfce7] rounded-sm p-2">
+          <div className="2xl:flex lg:hidden 3xs:flex  items-start gap-3">
+            <div className="bg-[#dcfce7]  rounded-sm p-2">
               <img className="w-[30px] " src={logoColor} alt="sdf" />
             </div>
             <div>
-              <h1 className="font-semibold ">
+              <h1 className="font-semibold text-sm ">
                 {" "}
                 {slides[currentIndex].secondaryCardTitle}
               </h1>
-              <p className="w-[350px] text-sm font-medium text-d1">
+              <p className="xl:w-[350px] text-sm font-medium text-d1">
                 {" "}
                 {slides[currentIndex].secondaryCardDescription}
               </p>

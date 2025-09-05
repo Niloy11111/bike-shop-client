@@ -104,7 +104,7 @@ const Navbar = () => {
   );
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => setScrollY(document.documentElement.scrollTop);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -125,7 +125,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav className=" ">
       <div className="bg-p1">
         <div
           className="customWidth text-sm flex justify-between
@@ -157,10 +157,12 @@ const Navbar = () => {
 
       <div
         className={`${
-          scrollY > 30 ? "border-b w-full fixed top-0 left-0 z-50" : ""
-        }  border-b3 border-b bg-white `}
+          scrollY > 30
+            ? "border-b w-screen ml-[-4px] fixed  top-0 left-0 z-50"
+            : ""
+        }  border-b3 border-b bg-white  `}
       >
-        <div className="customWidth h-[70px] flex  justify-between items-center">
+        <div className="customWidth   h-[70px] flex  justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               <div className="bg-p1 p-2 rounded-md">
@@ -226,7 +228,7 @@ const Navbar = () => {
           <div
             className={`${
               scrollY > 30 ? "border-none" : ""
-            } ] xl:flex bg-blued-200 items-center hidden  px-12 `}
+            } ] xl:flex  items-center hidden  px-12 `}
           >
             <ul className="">{navLinks}</ul>
           </div>

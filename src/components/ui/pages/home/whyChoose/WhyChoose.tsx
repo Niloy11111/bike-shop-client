@@ -11,7 +11,7 @@ const WhyChoose = () => {
       <div className="grid lg:grid-cols-3  md:grid-cols-2 gap-10 ">
         <div className="bg-[#f2f2f2] p-5 rounded-3xl">
           <div className="bg-white max-w-max mx-auto p-5 rounded-full">
-            <Handshake color="#ff3811" size={48} />
+            <Handshake className="text-p1" size={48} />
           </div>
           <h2 className="text-2xl font-bold my-5 text-center">
             Trusted Expertise
@@ -31,7 +31,7 @@ const WhyChoose = () => {
         </div>
         <div className="bg-[#f2f2f2]  p-5 rounded-3xl">
           <div className="bg-white max-w-max mx-auto p-5 rounded-full">
-            <Sparkles color="#ff3811" size={48} />
+            <Sparkles className="text-p1" size={48} />
           </div>
 
           <h2 className="text-2xl font-bold my-5 text-center">
@@ -53,7 +53,7 @@ const WhyChoose = () => {
         </div>
         <div className="bg-[#f2f2f2]  p-5 rounded-3xl">
           <div className="bg-white max-w-max mx-auto p-5 flex justify-center items-center rounded-full ">
-            <HandMetal color="#ff3811" size={48} />
+            <HandMetal className="text-p1" size={48} />
           </div>
 
           <h2 className="text-2xl font-bold my-5 text-center">

@@ -1,10 +1,7 @@
-import call from "/assets/call-alt.png";
-import clock from "/assets/clock.png";
 import facebook from "/assets/facebook.png";
 import instagram from "/assets/instagram.png";
 import linkedin from "/assets/linkedin.png";
-import mail from "/assets/mail.png";
-import map from "/assets/map-pin.png";
+
 import twitter from "/assets/twitter.png";
 import user from "/assets/user.png";
 import user2 from "/assets/user2.png";
@@ -66,37 +63,6 @@ export const testimonials = [
     review:
       "A fantastic bike shop! Great service, knowledgeable staff, and excellent quality. My new road bike is everything I wanted. Definitely coming back!",
     image: user4,
-  },
-];
-
-export const storeDetails = [
-  {
-    id: 1,
-    title: "opening hours",
-    icon: clock,
-    subOne: "Monday-Sunday",
-    subTwo: "9:00 am to 7:00 pm",
-  },
-  {
-    id: 2,
-    title: "let's talk",
-    icon: map,
-    subOne: "Phone: 1-800-222-4545",
-    subTwo: "Fax: 1-800-222-4545",
-  },
-  {
-    id: 3,
-    title: "book a service",
-    icon: mail,
-    subOne: "service@bikeshop.com",
-    subTwo: "Support: support@bikeshop.com",
-  },
-  {
-    id: 4,
-    title: "our address",
-    icon: call,
-    subOne: "456 Cycle Street, Bike City",
-    subTwo: "Cycling State, USA",
   },
 ];
 
